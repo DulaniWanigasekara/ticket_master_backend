@@ -3,6 +3,8 @@ package edu.icet.model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -28,4 +30,10 @@ public class Bookings {
 
     @Enumerated(EnumType.STRING)
     private BookingStatus status;
+
+    @Column(name = "booked_at")
+    private LocalDateTime bookedAt;
+
+    @Column(name = "cancelled_at")
+    private LocalDateTime cancelledAt;
 }
