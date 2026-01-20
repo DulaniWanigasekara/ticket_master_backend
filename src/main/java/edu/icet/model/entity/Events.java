@@ -22,4 +22,7 @@ public class Events {
     private double basePrice;
     private boolean isHighDemand;
     private LocalDateTime eventDate;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
 }
