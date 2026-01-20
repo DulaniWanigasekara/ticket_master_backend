@@ -8,5 +8,6 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 public class BookingRequestDto {
-    private String seatId;
+    private Long seatId;
+    private Long userId;
 }
