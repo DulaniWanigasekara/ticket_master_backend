@@ -3,6 +3,8 @@ package edu.icet.model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -23,4 +25,7 @@ public class Users {
     private UserTier tier;
 
     private String email;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
 }
