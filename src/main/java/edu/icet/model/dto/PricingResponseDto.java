@@ -7,7 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-
+@Builder
 public class PricingResponseDto {
     private Double basePrice;
     private String userTier;
