@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -16,4 +17,10 @@ public interface SeatsRepository extends JpaRepository<Seats, Long> {
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("SELECT s FROM Seats s WHERE s.id = :id")
     Optional<Seats> findByIdWithLock(@Param("id") Long id);
+
+    List<Seats> findByEvents_Id(Long eventId);
+
+    @Query("SELECT s FROM Seats s WHERE s.events.id = :eventId AND s.status = 'AVAILABLE'")
+    List<Seats> findAvailableSeatsByEvent(@Param("eventId") Long eventId);
+
 }
