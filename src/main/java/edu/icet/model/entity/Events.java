@@ -20,6 +20,6 @@ public class Events {
     private Long id;
     private String name;
     private double basePrice;
-    private boolean idHighDemand;
+    private boolean isHighDemand;
     private LocalDateTime eventDate;
 }
